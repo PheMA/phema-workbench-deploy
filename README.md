@@ -34,3 +34,20 @@ Once the containers are all running, the following URLs should be accessible:
 * http://workbench.local.phema.science/hapi - The HAPI FHIR web overlay
 
 :bulb: When running CQL, use the **PhEMA Workbench CQL Executor** server.
+
+## Production Deploy
+
+We have the ability to perform a production deploy protected by basic auth (for
+now). To do this, you need to set the following environment variables before
+running Compose:
+
+1. `PHEMA_WORKBENCH_HTPASSWD_PATH`: The path to the [`htpasswd`](https://docs.nginx.com/nginx/admin-guide/security-controls/configuring-http-basic-authentication/) file to use.
+2. `PHEMA_WORKBENCH_ENV`: Set this to `prod` to use the `nginx-prod.conf` file,
+   or create a new Nginx config file called `nginx-whatever.conf` and set the
+   variable to `whatever`.
+
+For example:
+
+```
+PHEMA_WORKBENCH_HTPASSWD_PATH=/opt/phema/workbench/.htpasswd PHEMA_WORKBENCH_ENV=prod docker-compose up
+```
