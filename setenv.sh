@@ -1,0 +1,1 @@
+CATALINA_OPTS="$CATALINA_OPTS -Dhapi.properties=/opt/phema/hapi.properties"
