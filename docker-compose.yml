@@ -29,7 +29,7 @@ services:
     volumes:
       - phema-api-volume:/opt/phema/workbench/
   app:
-    image: phema/phema-workbench-app:0.4.3
+    image: phema/phema-workbench-app:0.4.4
     container_name: phema-workbench-app
     restart: unless-stopped
     networks:
