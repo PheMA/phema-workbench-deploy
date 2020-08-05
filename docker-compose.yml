@@ -52,6 +52,7 @@ services:
       - ${PWD}/nginx-${PHEMA_WORKBENCH_ENV:-local}-https.conf:/etc/nginx/conf.d/default.conf
       - ${PHEMA_WORKBENCH_HTPASSWD_PATH:-/tmp/.htpasswd}:/opt/phema/workbench/
       - ${PHEMA_WORKBENCH_CERTS_PATH:-/opt/phema/workbench/certs}:/opt/phema/workbench/certs
+      - ${PWD}/nginx.conf:/etc/nginx/nginx.conf
 
 volumes:
   phema-postgres-volume:
