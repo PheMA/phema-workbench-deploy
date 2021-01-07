@@ -28,6 +28,12 @@ services:
       - phema-network
     volumes:
       - phema-api-volume:/opt/phema/workbench/
+  repo-api:
+    image: phema/phema-workbench-repo-api:1.0.3
+    container_name: phema-workbench-repo-api
+    restart: unless-stopped
+    networks:
+      - phema-network
   app:
     image: phema/phema-workbench-app:0.5.7
     container_name: phema-workbench-app
