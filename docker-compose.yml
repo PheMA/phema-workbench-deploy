@@ -2,7 +2,7 @@ version: "3"
 
 services:
   cqf-ruler:
-    image: phema/phema-cqf-ruler:0.3.1
+    image: phema/phema-cqf-ruler:0.3.2
     container_name: phema-cqf-ruler
     restart: unless-stopped
     networks:
