@@ -35,7 +35,7 @@ services:
     networks:
       - phema-network
   app:
-    image: phema/phema-workbench-app:0.5.7
+    image: phema/phema-workbench-app:0.5.9
     container_name: phema-workbench-app
     restart: unless-stopped
     networks:
