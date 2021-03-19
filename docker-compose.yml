@@ -21,7 +21,7 @@ services:
     volumes:
       - phema-postgres-volume:/var/lib/postgresql/data
   api:
-    image: phema/phema-workbench-api:0.4.3
+    image: phema/phema-workbench-api:0.4.6
     container_name: phema-workbench-api
     restart: unless-stopped
     networks:
