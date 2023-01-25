@@ -18,8 +18,10 @@ git clone https://github.com/PheMA/phema-workbench-deploy.git && cd phema-workbe
 Then spin up the containers with Compose:
 
 ```
-docker-compose up
+PHEMA_WORKBENCH_CERTS_PATH=./certs PHEMA_WORKBENCH_HTPASSWD_PATH=./htpasswd docker compose up
 ```
+
+The environment variables provided point to local, testing versions of the `.htpasswd` file and SSL certificates.  None of these should be used in a publicly-facing environment.
 
 :bulb: You may have to run this a few times until it works, since container
 dependencies are not currently set up properly. Once Postgres is initialized it
@@ -29,11 +31,18 @@ should start up first time every time.
 
 Once the containers are all running, the following URLs should be accessible:
 
-* http://workbench.local.phema.science/ - The PhEMA Workbench app
-* http://workbench.local.phema.science/fhir - The FHIR server base URL
-* http://workbench.local.phema.science/hapi - The HAPI FHIR web overlay
+* https://workbench.local.phema.science:4321/ - The PhEMA Workbench app
+* https://workbench.local.phema.science:4321/fhir - The FHIR server base URL
+* https://workbench.local.phema.science:4321/hapi - The HAPI FHIR web overlay
 
 :bulb: When running CQL, use the **PhEMA Workbench CQL Executor** server.
+
+#### Workbench Credentials
+
+For the local instance, the default credentials are:
+
+* **Login:** test
+* **Password:** test
 
 ## Production Deploy
 
